@@ -1,49 +1,90 @@
-Medical Bot
-A Telegram bot that helps users identify possible medical diagnoses based on symptoms provided via text or voice input. The bot uses speech recognition, natural language processing, and an external API to process symptoms, predict diseases, and provide treatment recommendations.
-Setup Instructions
 
-Clone the repository:
+# 🤖 Medical Bot / Медицинский Бот
+
+A Telegram bot that helps users identify possible medical diagnoses based on symptoms provided via **text or voice input**.  
+Бот Telegram, который помогает определить возможные диагнозы на основе симптомов, отправленных **текстом или голосом**.
+
+---
+
+## 🚀 Setup Instructions / Инструкции по установке
+
+### 1. Clone the repository / Клонирование репозитория
+
+```bash
 git clone <repository_url>
 cd medical_bot
+````
 
+### 2. Install dependencies / Установка зависимостей
 
-Install dependencies: Ensure Python 3.8+ is installed, then run:
+Ensure Python 3.8+ is installed / Убедитесь, что установлен Python версии 3.8 или выше:
+
+```bash
 pip install -r requirements.txt
+```
 
+### 3. Install FFmpeg / Установка FFmpeg
 
-Install FFmpeg: FFmpeg is required for audio conversion. Install it on your system:
+FFmpeg is required for audio processing / FFmpeg необходим для обработки аудио:
 
-Ubuntu: sudo apt-get install ffmpeg
-macOS: brew install ffmpeg
-Windows: Download from FFmpeg website and add to PATH.
+* **macOS**:
 
+  ```bash
+  brew install ffmpeg
+  ```
+* **Windows**:
+  [Download FFmpeg](https://ffmpeg.org/download.html) and add to PATH / скачайте с сайта и добавьте в PATH.
 
-Download Vosk model: Download the Russian Vosk model (vosk-model-ru-0.22) from Vosk Models and place it in the project root or update the VOSK_MODEL_PATH in config/config.py.
+### 4. Download Vosk model / Загрузка модели Vosk
 
-Configure the bot: Update config/config.py with your Telegram bot token and API keys for the Grok API.
+* Download the Russian Vosk model (`vosk-model-ru-0.22`) from [Vosk Models](https://alphacephei.com/vosk/models).
+* Place it in the project root or update the `VOSK_MODEL_PATH` in `config/config.py`.
 
-Run the bot:
+Скачайте русскую модель Vosk и разместите её в корне проекта или укажите путь в `config/config.py`.
+
+### 5. Configure the bot / Настройка бота
+
+Edit `config/config.py` and add:
+
+* Your Telegram Bot Token
+* Grok API keys for diagnosis
+
+Отредактируйте `config/config.py`, добавив:
+
+* Токен вашего Telegram-бота
+* API-ключи для сервиса Grok
+
+### 6. Run the bot / Запуск бота
+
+```bash
 python main.py
+```
 
+---
 
+## 💬 Usage / Использование
 
-Usage
+1. Start the bot with the `/start` command.
+   Запустите бота командой `/start`.
 
-Start the bot with /start to receive a welcome message.
-Send symptoms via text (e.g., "кашель, температура") or voice message.
-The bot will ask for additional symptoms if needed and provide a diagnosis and recommendations.
+2. Send symptoms via **text** (e.g., `кашель, температура`) or **voice message**.
+   Отправьте симптомы **текстом** или **голосом**.
 
-Notes
+3. The bot may ask for more symptoms, then provide a **preliminary diagnosis** and **recommendations**.
+   Бот может запросить дополнительные симптомы, а затем предложит **возможный диагноз** и **рекомендации**.
 
-This bot is for informational purposes only and does not replace professional medical advice.
-Ensure API keys and tokens are kept secure and not exposed in version control.
+---
 
-Project Structure
+## 📁 Project Structure / Структура проекта
 
-config/: Configuration settings.
-utils/: Utility functions for audio processing, API calls, and logging.
-services/: Business logic for symptom processing, recommendations, and user state.
-handlers/: Telegram bot message handlers.
-main.py: Bot entry point.
-requirements.txt: Project dependencies.
+```
+medical_bot/
+├── config/           # Configuration settings / Настройки
+├── utils/            # Utility functions / Вспомогательные функции
+├── services/         # Business logic / Логика обработки данных
+├── handlers/         # Bot message handlers / Обработчики сообщений
+├── main.py           # Bot entry point / Точка входа
+├── requirements.txt  # Project dependencies / Зависимости
+```
 
+---
