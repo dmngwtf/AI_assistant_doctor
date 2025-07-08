@@ -1,12 +1,12 @@
 
-# 🤖 Medical Bot / Медицинский Бот
+# Medical Bot / Медицинский Бот
 
 A Telegram bot that helps users identify possible medical diagnoses based on symptoms provided via **text or voice input**.  
 Бот Telegram, который помогает определить возможные диагнозы на основе симптомов, отправленных **текстом или голосом**.
 
 ---
 
-## 🚀 Setup Instructions / Инструкции по установке
+##  Setup Instructions / Инструкции по установке
 
 ### 1. Clone the repository / Клонирование репозитория
 
@@ -62,7 +62,7 @@ python main.py
 
 ---
 
-## 💬 Usage / Использование
+##  Usage / Использование
 
 1. Start the bot with the `/start` command.
    Запустите бота командой `/start`.
@@ -75,7 +75,7 @@ python main.py
 
 ---
 
-## 📁 Project Structure / Структура проекта
+##  Project Structure / Структура проекта
 
 ```
 medical_bot/
